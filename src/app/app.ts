@@ -5,7 +5,7 @@ import {Navbar} from "./compartidos/componentes/navbar/navbar";
 
 @Component({
   selector: 'app-root',
-  imports: [/*RouterOutletAdnHomeVista*/Navbar],
+  imports: [RouterOutlet,Navbar],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
