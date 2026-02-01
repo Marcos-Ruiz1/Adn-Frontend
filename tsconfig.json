@@ -3,6 +3,15 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "src",                     
+    "paths": {                            
+      "@components/*": [
+        "app/compartidos/componentes/*"
+      ],
+      "@core/*": [
+        "app/core/*"
+      ],
+    },
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
