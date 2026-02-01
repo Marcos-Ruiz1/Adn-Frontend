@@ -1,1 +1,35 @@
-<p>listados-vista works!</p>
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      
+      
+      <div class="card shadow border-0">
+        
+        <div class="card-header bg-primary text-white p-3 d-flex justify-content-between align-items-center">
+          <h4 class="mb-0"><i class="bi bi-list-check"></i> Historial de Secuencias</h4>
+          <span class="badge bg-light text-primary">Total: {{ listadoAdn()?.length || 0 }}</span>
+        </div>
+        
+        <div class="card-body p-0"> 
+          
+          @if (listadoAdn(); as datosCargados) {
+            
+            
+            <app-tabla-adn [listadoAdn]="datosCargados"></app-tabla-adn>
+
+          } @else {
+            
+            <div class="text-center p-5">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Cargando...</span>
+              </div>
+              <p class="mt-2 text-muted">Obteniendo registros del servidor...</p>
+            </div>
+          }
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
