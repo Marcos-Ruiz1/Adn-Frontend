@@ -1,59 +1,46 @@
-# AdnFrontend
+# Frontend Sistema de ADN's
+Este proyecto es un sistema que te permite verificar si la secuencia de Adn 
+tiene mutación o no. Revisar los últimos Adn's consultados y por último tener
+las estadísticas de los Adn en la base de datos
+## 🚀 Tabla de Contenidos
+- [Tecnologías Utilizadas](#tecnologías-utilizadas)
+- [Decisiones de Arquitectura](#decisiones-de-arquitectura)
+- [Instalación y Configuración](#instalación-y-configuración)
+- [Uso de la API](#uso-de-la-api)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.2.
+---
 
-## Development server
+## 🛠 Tecnologías Utilizadas
 
-To start a local development server, run:
+### Backend
+- **Angular*: Framework web.
+- **Bootstrap**: Libreria para manejar los estilos en las vistas
 
-```bash
-ng serve
-```
+## 🏛 Decisiones de Arquitectura
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Para este proyecto se optó por seguir los estandares de Angular:
 
-## Code scaffolding
+1.  **Componentes Angular** Modulos de código fuente que tienen su HTML, CSS Y TYPESCRIPT
+2.  **Servicios:** Clases encargadas de manejar la comunicación del sistema con servicios externos como consumir una API.
+3.  **Capa de Modelos:** Encargada de representar la información recibida y poder ser manejada de una manera más sencilla y flexible para ser mostrada a los usuarios.
+- La justificación de la organización de carpetas:
+    - src/app/compartidos/componentes: esta carpeta contiene primeramente aquellos recursos que pueden ser utilizados por todo el sistema, es por eso que la carpeta componentes son aquellos modulos que existe la posibilidad de ser reutilizados en vistas más grandes.
+    - src/app/vistas: la carpeta vistas engloba aquellos componentes que se consideran como la plantilla general, como el paisaje completo donde serán utilizados componentes hijos.
+    - src/ap/core: la carpeta core esta pensaba como todo aquello que es crítico para el sistema, ahí se encuentran las clases modelo y los servicios, ya que sin ellos o no existe funcionamiento correcto del sistema o el trabajo es reducido en su calidad.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 💻 Instalación y Configuración
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Requisitos Previos
+- NodeJs
+- Angular CLI
 
-```bash
-ng generate --help
-```
+### Configuración del Frontend
+1. Entrar a la carpeta del cliente: `cd Adn-Frontend`.
+2. Instalar dependencias: `npm install`.
+3. Configurar credenciales en el archivo `environment.development.ts`
+3. Iniciar la aplicación: `ng serve`.
+4. Abrir en el navegador: `http://localhost:4200`.
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
