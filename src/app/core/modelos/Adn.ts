@@ -1,7 +1,7 @@
 export class Adn{
 
     id!: number;
-    secuencia!: string;
-    esMutado!: boolean;
-    fecha!: string
+    sequence!: string;
+    has_mutation!: boolean;
+    created_at!: string
 }
