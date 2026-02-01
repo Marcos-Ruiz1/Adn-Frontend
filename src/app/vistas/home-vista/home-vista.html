@@ -1,1 +1,45 @@
-<p>home-vista works!</p>
+<div class="container mt-5">
+  <!-- Hero Section -->
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">DNA Analyzer</h1>
+    <p class="lead text-muted">Sistema de detección de mutaciones en secuencias genómicas.</p>
+  </div>
+
+  <div class="row g-4 justify-content-center">
+    
+    <!-- Card 1: Analizar -->
+    <div class="col-md-5">
+      <div class="card h-100 shadow border-0 hover-effect" style="cursor: pointer;" routerLink="/mutacion">
+        <div class="card-body text-center p-5">
+          <div class="feature-icon bg-primary bg-gradient text-white mb-4 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+            <i class="bi bi-dna fs-1"></i>
+          </div>
+          <h3 class="fw-bold">Analizar ADN</h3>
+          <p class="text-muted">Ingresa nuevas secuencias para verificar si existe una mutación genética.</p>
+          <button class="btn btn-outline-primary stretched-link">Empezar Análisis</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Listado -->
+    <div class="col-md-5">
+      <div class="card h-100 shadow border-0 hover-effect" style="cursor: pointer;" routerLink="/listados">
+        <div class="card-body text-center p-5">
+          <div class="feature-icon bg-success bg-gradient text-white mb-4 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+            <i class="bi bi-list-check fs-1"></i>
+          </div>
+          <h3 class="fw-bold">Ver Historial</h3>
+          <p class="text-muted">Consulta todos los registros procesados anteriormente y sus resultados.</p>
+          <button class="btn btn-outline-success stretched-link">Ver Registros</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer Info -->
+  <div class="mt-5 text-center">
+    <hr class="w-25 mx-auto">
+    <p class="small text-secondary">© 2026 DNA Lab System - V 1.0</p>
+  </div>
+</div>
