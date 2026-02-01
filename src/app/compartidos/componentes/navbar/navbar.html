@@ -1,18 +1,12 @@
-<!-- As a link -->
-<nav class="navbar bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/mutacion">Verificar Mutación</a>
-  </div>
-</nav>
-
-<nav class="navbar bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/stats">Stats</a>
-  </div>
-</nav>
-
-<nav class="navbar bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/listados">Listado de Adn's</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm mb-4">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" routerLink="/">
+      <i class="bi bi-dna me-2"></i> ADN Manager
+    </a>
+    <div class="navbar-nav">
+      <a class="nav-link" routerLinkActive="active" routerLink="/mutacion">Verificar</a>
+      <a class="nav-link" routerLinkActive="active" routerLink="/stats">Estadísticas</a>
+      <a class="nav-link" routerLinkActive="active" routerLink="/listados">Listados</a>
+    </div>
   </div>
 </nav>
