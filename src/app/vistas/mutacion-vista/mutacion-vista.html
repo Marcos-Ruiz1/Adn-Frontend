@@ -1,1 +1,59 @@
-<p>mutacion-vista works!</p>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow border-0">
+        <div class="card-header bg-primary text-white p-3">
+          <h4 class="mb-0"><i class="bi bi-dna"></i> Analizador de ADN</h4>
+        </div>
+        
+        <div class="card-body p-4">
+          <p class="text-muted">Ingrese las secuencias de ADN una por una (Solo caracteres A, T, G, C).</p>
+
+          <form [formGroup]="dnaForm" (ngSubmit)="enviar()">
+            
+            <div formArrayName="secuencias">
+              @for (control of secuencias.controls; track $index) {
+                <div class="input-group mb-2">
+                  <span class="input-group-text bg-light text-secondary">#{{ $index + 1 }}</span>
+                  <input 
+                    type="text" 
+                    [formControlName]="$index" 
+                    class="form-control" 
+                    placeholder="Ej: ATGCGA"
+                    style="text-transform: uppercase;">
+                  
+                  <button 
+                    type="button" 
+                    class="btn btn-outline-danger" 
+                    (click)="eliminarFila($index)"
+                    [disabled]="secuencias.length === 1">
+                    <i class="bi bi-trash"></i> Borrar
+                  </button>
+                </div>
+                @if (control.invalid && control.touched) {
+                  <small class="text-danger d-block mb-2">Secuencia inválida. Use solo A, T, G, C.</small>
+                }
+              }
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+              <button type="button" class="btn btn-secondary" (click)="agregarFila()">
+                <i class="bi bi-plus-lg"></i> Añadir Fila
+              </button>
+
+              <button type="submit" class="btn btn-success px-5" [disabled]="dnaForm.invalid">
+                Analizar ADN
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+     
+      <div class="alert alert-info mt-4">
+        <strong>Ejemplo:</strong> Para una matriz de 6x6, añade 6 filas con 6 letras cada una.
+      </div>
+    </div>
+  </div>
+</div>
