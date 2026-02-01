@@ -1,1 +1,63 @@
-<p>stats-vista works!</p>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      
+      <div class="card shadow border-0">
+        <!-- Encabezado con el mismo estilo (Color Info para diferenciar de Mutación) -->
+        <div class="card-header bg-info text-white p-3">
+          <h4 class="mb-0"><i class="bi bi-graph-up-arrow"></i> Estadísticas de ADN</h4>
+        </div>
+
+        <div class="card-body p-4">
+          @if (statsSignal(); as datosCargados) {
+            <div class="row text-center">
+              
+              <!-- Columna ADN Mutado -->
+              <div class="col-md-4 border-end">
+                <h6 class="text-muted text-uppercase small">ADN Mutado</h6>
+                <h2 class="display-6 fw-bold text-success">{{ datosCargados.count_mutations }}</h2>
+              </div>
+
+              <!-- Columna ADN No Mutado -->
+              <div class="col-md-4 border-end">
+                <h6 class="text-muted text-uppercase small">No Mutado</h6>
+                <h2 class="display-6 fw-bold text-secondary">{{ datosCargados.count_no_mutation }}</h2>
+              </div>
+
+              <!-- Columna Ratio -->
+              <div class="col-md-4">
+                <h6 class="text-muted text-uppercase small">Ratio de Éxito</h6>
+                <h2 class="display-6 fw-bold text-primary">{{ datosCargados.ratio | number:'1.1-2' }}</h2>
+              </div>
+
+            </div>
+
+            <!-- Visualización de progreso simple -->
+            <div class="mt-4">
+                <div class="progress" style="height: 10px;">
+                    <div class="progress-bar bg-success" [style.width.%]="(datosCargados.count_mutations / (datosCargados.count_mutations + datosCargados.count_no_mutation)) * 100"></div>
+                    <div class="progress-bar bg-light" [style.width.%]="(datosCargados.count_no_mutation / (datosCargados.count_mutations + datosCargados.count_no_mutation)) * 100"></div>
+                </div>
+            </div>
+
+          } @else {
+            <!-- Estado de carga con el mismo estilo de padding -->
+            <div class="text-center py-5">
+              <div class="spinner-border text-info" role="status">
+                <span class="visually-hidden">Cargando...</span>
+              </div>
+              <p class="mt-2 text-muted">Cargando información estadística...</p>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Hint informativo similar al del analizador -->
+      <div class="alert alert-light border mt-4">
+        <i class="bi bi-info-circle me-2"></i> 
+        Estas estadísticas se actualizan automáticamente cada vez que se analiza una nueva secuencia.
+      </div>
+
+    </div>
+  </div>
+</div>
