@@ -38,6 +38,11 @@ export class MutacionVista {
     }
   }
 
+  toUppercase(event: Event) {
+    const input = event.target as HTMLInputElement;
+    input.value = input.value.toUpperCase();
+  }
+  
   enviar() {
     if (this.dnaForm.valid) {
       const dnaArray: string[] = this.dnaForm.value.secuencias as string[];
@@ -62,8 +67,9 @@ export class MutacionVista {
   }
   
   reestablecerFormulario() {
-    this.secuencias.clear();
-    this.agregarFila();
+     this.dnaForm.reset({
+    secuencias: ['']
+  });
   }
 
 }

@@ -15,12 +15,11 @@
               @for (control of secuencias.controls; track $index) {
                 <div class="input-group mb-2">
                   <span class="input-group-text bg-light text-secondary">#{{ $index + 1 }}</span>
-                  <input 
-                    type="text" 
-                    [formControlName]="$index" 
-                    class="form-control" 
-                    placeholder="Ej: ATGCGA"
-                    style="text-transform: uppercase;">
+                  <input
+  type="text"
+  [formControlName]="$index"
+  class="form-control"
+  (input)="toUppercase($event)">
                   
                   <button 
                     type="button" 
